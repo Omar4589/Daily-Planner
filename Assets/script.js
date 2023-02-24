@@ -44,6 +44,7 @@ $(function () {
 
   // Get the current hour using Day.js
   var currentHour = dayjs().hour();
+  console.log(currentHour);
 
   // Get time block element
   var timeBlock = $(".time-block");
@@ -51,7 +52,7 @@ $(function () {
   // Loop through each time-block
   $(timeBlock).each(function () {
     // Get the hour of the time-block from its id
-    var timeBlockHour = parseInt($(this).attr('id').split('-')[1]);
+    var timeBlockHour = parseInt($(this).attr("id").split("-")[1]);
     // Compare the time-block hour to the current hour
     if (timeBlockHour < currentHour) {
       $(this).addClass("past");
@@ -81,8 +82,9 @@ $(function () {
   // TODO: Add code to display the current date in the header of the page.
 
   // Get the current date using Day.js
-var currentDate = dayjs().format('dddd, MMMM D');
 
-// Append the formatted date to the header element
-$('#currentDay').append(currentDate);
+  var currentDate = dayjs().format("dddd, MMMM D, YYYY");
+
+  // Append the formatted date to the header element
+  $("#currentDay").append(currentDate);
 });
