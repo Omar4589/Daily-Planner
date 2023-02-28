@@ -21,15 +21,15 @@ _Each time-block (9AM,10Am,11AM, etc.) has a text box next to it._
     - Edit the text
     - Press the save button again to save the new input
 
-_Each time-block is color coded_<br>
+_Each time-block is color coded based on the current hour of the day._<br>
 
-- _Grey background is used for time-blocks in the past_<br>
-- _Red background is used for time-blocks in the present_<br>
-- _Green background is used for time-blocks in the future_<br>
+- _Grey background is used for time-blocks past the current hour_<br>
+- _Red background is used for the time-block matching the current hour_<br>
+- _Green background is used for time-blocks with a future hour_<br>
 
 _In example, if it is currently 12pm, the 9am, 10am, and 11am time-blocks will have a grey background._<br>
 _The 12pm time-block will be red, indicating it is currently 12pm & you should work on the planned activities for that time-block._<br>
-_Time-block's after 12pm will appear green to indicate the planned activities are to be worked on in the future._<br>
+_Time-blocks after 12pm will appear green to indicate the planned activities are to be worked on in the future._<br>
 <br>
 
 ## Screenshot
