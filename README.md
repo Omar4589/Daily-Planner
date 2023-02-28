@@ -34,7 +34,7 @@ _Time-block's after 12pm will appear green to indicate the planned activities ar
 
 ## Screenshot
 
-<img src="./assets/Dailyplannerscreenshot.png">  
+<img src="./Assets/DailyPlannerScreenshot.png">  
     
 ## License
    
