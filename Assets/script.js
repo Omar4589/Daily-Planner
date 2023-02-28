@@ -1,19 +1,10 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html. -DONE
+// Wrap all code that interacts with the DOM in a call to jQuery to ensure that the code isn't run until the browser has finished rendering all the elements in the html.
 
 $(function () {
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-
-  // Select all the save buttons
+  //handle on all the save buttons
   var saveButtons = $(".saveBtn");
 
-  // Add a click event listener to each save button
+  // Click event listener for each save button
   saveButtons.on("click", function () {
     // Get the id of the time-block containing the button that was clicked
     //$(this) is referring to the button that was clicked.
@@ -36,25 +27,19 @@ $(function () {
     localStorage.setItem(timeBlockId, userInput);
   });
 
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-
-  // Get the current hour using Day.js
+  // Handle on the current hour using Day.js
   var currentHour = dayjs().hour();
-  console.log(currentHour);
 
-  // Get time block element
+  // Handle on time block element
   var timeBlock = $(".time-block");
 
-  // Loop through each time-block
+  // Function that loops through each time-block
   $(timeBlock).each(function () {
-    // Get the hour of the time-block from its id
+    // Get the hour of the time-block from its id by parsing the "id" attribute after splitting it at the hyphen and selecting index 1, the second element.
     var timeBlockHour = parseInt($(this).attr("id").split("-")[1]);
-    // Compare the time-block hour to the current hour
+    // Compares the time-block hour to the current hour
     if (timeBlockHour < currentHour) {
+      //adds class to "this" time block
       $(this).addClass("past");
     } else if (timeBlockHour === currentHour) {
       $(this).addClass("present");
@@ -63,11 +48,7 @@ $(function () {
     }
   });
 
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-
+  //function that loops through each time block.
   $(".time-block").each(function () {
     // Get the id of the time-block
     var timeBlockId = $(this).attr("id");
@@ -79,18 +60,17 @@ $(function () {
     $(this).find(".description").val(userInput);
   });
 
-  // TODO: Add code to display the current date in the header of the page.
-
   // Get the current date using Day.js
-
   var currentDate = dayjs().format("dddd, MMMM D, YYYY");
 
   // Append the formatted date to the header element
   $("#currentDay").append(currentDate);
-  
-  // Get current time of day using day.js
 
-  var currentTime = dayjs().format("HH:mm:ss");
-  
-  $("#currentTime").append(currentTime);
+  // Define a function to update the current time every second
+  function updateTime() {
+    var currentTime = dayjs().format("h:mm:ss A");
+    $("#currentTime").html(currentTime); // .html() jquery method updates the #currentTime element
+  }
+  // Call the updateTime function every second using setInterval()
+  setInterval(updateTime, 1000);
 });
