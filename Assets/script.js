@@ -87,4 +87,10 @@ $(function () {
 
   // Append the formatted date to the header element
   $("#currentDay").append(currentDate);
+  
+  // Get current time of day using day.js
+
+  var currentTime = dayjs().format("HH:mm:ss");
+  
+  $("#currentTime").append(currentTime);
 });
