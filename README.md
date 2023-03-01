@@ -3,7 +3,7 @@
 ## Description
 
 Are you having trouble managing your time?<br>
-Use this simple "Daily Planner" web application to plan-out your days ahead of time.
+Use this simple "Daily Planner" web application to plan-out your work days ahead of time.
 
 ## Tool URL
 
