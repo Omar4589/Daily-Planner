@@ -25,7 +25,7 @@ _Each time-block is color coded based on the current hour of the day._<br>
 
 - _Grey background is used for time-blocks past the current hour_<br>
 - _Red background is used for the time-block matching the current hour_<br>
-- _Green background is used for time-blocks with a future hour_<br>
+- _Green background is used for time-blocks within a future hour_<br>
 
 _In example, if it is currently 10am, the 9am time-block will have a grey background._<br>
 _The 10am time-block will be red, indicating it is currently 10am & you should work on the planned activities for that time-block._<br>
