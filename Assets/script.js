@@ -4,7 +4,7 @@ $(function () {
   //handle on all the save buttons
   var saveButtons = $(".saveBtn");
 
-  // Click event listener for each save button
+  //Event listener for each save button
   saveButtons.on("click", function () {
     // Get the id of the time-block containing the button that was clicked
     //$(this) is referring to the button that was clicked.
